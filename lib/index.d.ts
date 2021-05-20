@@ -89,7 +89,7 @@ export declare class MaplatApp extends EventTarget {
     constructor(appOption: any);
     settingLoader(setting: any): Promise<any>;
     i18nLoader(): Promise<unknown>;
-    sourcesLoader(mapReturnValue: any): Promise<unknown[]>;
+    sourcesLoader(mapReturnValue: any): Promise<[unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown, unknown]>;
     handleSetting(setting: any, appOption: any): Promise<void>;
     handleI18n(i18nObj: any, appOption: any): Promise<void>;
     prepareMap(appOption: any): {

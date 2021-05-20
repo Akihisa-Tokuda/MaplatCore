@@ -9,5 +9,8 @@ export declare const LoggerLevel: {
 export declare class Logger {
     level: number;
     constructor(level: any);
-    make(): void;
+    make(): {
+        (...data: any[]): void;
+        (message?: any, ...optionalParams: any[]): void;
+    } | undefined;
 }

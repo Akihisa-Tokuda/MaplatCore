@@ -11,7 +11,7 @@ export declare class HistMap_tin extends HistMap {
     merc2XyAsync_returnLayer(merc: Coordinate): Promise<([number, Coordinate] | undefined)[]>;
     mapSize2MercSize(callback: any): void;
     size2MercsAsync(center?: Coordinate, zoom?: number, rotate?: number): Promise<number[][]>;
-    mercs2SizeAsync(mercs: Coordinate[], asMerc?: boolean): Promise<[Coordinate, number, number]>;
+    mercs2SizeAsync(mercs: Coordinate[], asMerc?: boolean): any;
     mercs2XysAsync(mercs: any): Promise<any[]>;
     xy2MercAsync(xy: Coordinate): Promise<Coordinate>;
     merc2XyAsync(merc: Coordinate, ignoreBackside?: boolean): Promise<Coordinate | undefined>;

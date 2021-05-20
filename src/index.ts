@@ -242,7 +242,7 @@ export class MaplatApp extends EventTarget {
   // Async initializer 8: Load sources setting asynchronous
   async sourcesLoader(mapReturnValue: any) {
     const dataSource = this.appData!.sources;
-    const sourcePromise = [];
+    const sourcePromise = [] as any;
     const commonOption = {
       //homePosition: mapReturnValue.homePos,
       //mercZoom: mapReturnValue.defZoom,
@@ -320,7 +320,7 @@ export class MaplatApp extends EventTarget {
       fakeRadius,
       homePosition: homePos
     });
-    let backDiv = null;
+    let backDiv = null as unknown;
     if (this.overlay) {
       backDiv = `${this.mapDiv}_back`;
       newElem = createElement(
@@ -382,7 +382,7 @@ export class MaplatApp extends EventTarget {
       if (prev) return prev;
       if (curr instanceof NowMap && !(curr instanceof TmsMap)) return curr;
     }, null);
-    const cache = [];
+    const cache = [] as any;
     this.cacheHash = {};
     for (let i = 0; i < sources.length; i++) {
       const source = sources[i];
@@ -1108,7 +1108,7 @@ export class MaplatApp extends EventTarget {
         new Promise((resolve, _reject) => {
           this.convertParametersFromCurrent(to, (size: any) => {
             let backSrc = null;
-            let backTo = null;
+            let backTo = null as any;
             const backRestore = restore!.backgroundID
               ? this.cacheHash[restore!.backgroundID]
               : undefined;

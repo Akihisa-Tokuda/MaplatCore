@@ -15,27 +15,22 @@ export class Logger {
   }
   make() {
     for (const key in console) {
-      // @ts-expect-error ts-migrate(7053) FIXME: Element implicitly has an 'any' type because expre... Remove this comment to see the full error message
       const l = LoggerLevel[key.toUpperCase()];
       if (!l) {
         // l=LoggerLevel.OFF;
         continue;
       }
       if (this.level <= l) {
-        // @ts-expect-error ts-migrate(2774) FIXME: This condition will always return true since the f... Remove this comment to see the full error message
-        if (Function.bind) {
-          // @ts-expect-error ts-migrate(7053) FIXME: Element implicitly has an 'any' type because expre... Remove this comment to see the full error message
-          Logger.prototype[key] = (function (..._args) {
+        // if (Function.bind) {
+        //   Logger.prototype[key] = (function (..._args) {
             return console.log.bind(console);
-          })(key);
-        } else {
-          // @ts-expect-error ts-migrate(7053) FIXME: Element implicitly has an 'any' type because expre... Remove this comment to see the full error message
-          Logger.prototype[key] = (function (...args) {
-            return console.log(...args);
-          })(key);
-        }
+        //   })(key);
+        // } else {
+        //   Logger.prototype[key] = (function (...args) {
+        //     return console.log(...args);
+        //   })(key);
+        // }
       } else {
-        // @ts-expect-error ts-migrate(7053) FIXME: Element implicitly has an 'any' type because expre... Remove this comment to see the full error message
         // eslint-disable-next-line @typescript-eslint/no-empty-function
         Logger.prototype[key] = function () {};
       }

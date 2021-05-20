@@ -269,7 +269,7 @@ export function setCustomFunction<TBase extends Constructor>(Base: TBase) {
       if (theta === undefined) {
         theta = this._map!.getView().getRotation();
       }
-      const result = [];
+      const result = [] as any;
       for (let i = 0; i < xys.length; i++) {
         const xy = xys[i];
         const x = xy[0] * Math.cos(theta) - xy[1] * Math.sin(theta);

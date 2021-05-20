@@ -289,7 +289,7 @@ export class MaplatMap extends Map {
   }
   setFillEnvelope(xys: any, stroke: any, fill: any, layer: any) {
     if (!layer) layer = "envelope";
-    let style = null;
+    let style = null as any;
     if (stroke != null || fill != null) {
       const option = {};
       if (stroke != null) (option as any).stroke = new Stroke(stroke);
